@@ -14,4 +14,19 @@ public class AverageTemperatureCalculator {
             temperatures[i] = scanner.nextInt();
             sum += temperatures[i]; // Add to total sum
         }
+
+        double average = (double) sum / numberOfDays;
+        System.out.println("\nAverage temperature: " + average);
+
+        int countAboveAverage = 0;
+        for (int temp : temperatures) {
+            if (temp > average) {
+                countAboveAverage++;
+            }
+        }
+
+        System.out.println("Number of days above average: " + countAboveAverage);
+
+        scanner.close();
+    }
 }
